@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageId>TestApp.Ui</PackageId>
+    <Version>1.0.3</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DriverFactory\DriverFactory.csproj" />
+    <ProjectReference Include="..\ReportingLibrary\ReportingLibrary.csproj" />
+    <ProjectReference Include="..\Selenium\Selenium.csproj" />
+  </ItemGroup>
+
+</Project>
