@@ -1,5 +1,6 @@
 ﻿using Asserts;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using Selenium.Contracts;
 using System.Drawing;
 
@@ -63,7 +64,30 @@ namespace Selenium
         /// </summary>
         public void Click()//todo create and hook up a custom element clickable condition
         {
+            //wait for element to be clickable
+            Driver.Wait.Until(WaitConditions.ElementClickable(_Element));
+            //move to element
+            Actions actions = new Actions(Driver.WrappedDriver);
+            actions.MoveToElement(_Element);
+            actions.Perform();
+            //click element
             _Element.Click();
+        }
+
+        /// <summary>
+        /// READFIRST!!! This is to only be used if normal clicking methods wont work and you need a js work around
+        /// </summary>
+        public void ForceClick()
+        {
+            //wait for element to be clickable
+            Driver.Wait.Until(WaitConditions.ElementClickable(_Element));
+            //move to element
+            Actions actions = new Actions(Driver.WrappedDriver);
+            actions.MoveToElement(_Element);
+            actions.Perform();
+            //click the element through js
+            IJavaScriptExecutor executor = (IJavaScriptExecutor)Driver.WrappedDriver;
+            executor.ExecuteScript("arguments[0].click();", _Element);
         }
 
         /// <summary>

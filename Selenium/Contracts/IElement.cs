@@ -9,5 +9,7 @@ namespace Selenium.Contracts
         void SendKeys(string text);
         IElement FindElement(By locator);
         void Click();
+
+        void ForceClick();
     }
 }

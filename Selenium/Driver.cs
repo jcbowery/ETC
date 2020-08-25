@@ -38,6 +38,8 @@ namespace Selenium
             Wait = new Wait(_DriverListener, SeleniumConfig.WaitTime);
         }
 
+        public static EventFiringWebDriver WrappedDriver => _DriverListener;
+
         /// <summary>
         /// Get the Url of page
         /// </summary>
