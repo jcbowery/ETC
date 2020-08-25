@@ -44,21 +44,6 @@ namespace Selenium
         }
 
         /// <summary>
-        /// Waits for elements colelction to not be empty
-        /// </summary>
-        /// <param name="elements"></param>
-        /// <returns>bool</returns>
-        public static Func<IWebDriver, bool> ElementsNotEmpty(ReadOnlyCollection<IWebElement> elements)
-        {
-            bool condition(IWebDriver driver)
-            {
-                return elements.Count > 0;
-            }
-
-            return condition;
-        }
-
-        /// <summary>
         /// Waits for element to be enabled
         /// </summary>
         /// <param name="element"></param>
@@ -87,6 +72,38 @@ namespace Selenium
 
             return condition;
         }
+
+        /// <summary>
+        /// Used to test if an elmeent is enabled and displayed. Good for testing if clickable
+        /// </summary>
+        /// <param name="element"></param>
+        /// <returns>bool</returns>
+        public static Func<IWebDriver,bool> ElementClickable(IWebElement element)
+        {
+            bool condition(IWebDriver driver)
+            {
+                if(element.Enabled && element.Displayed) { return true; }
+                else { return false; }
+            }
+            return condition;
+        }
+
+        /// <summary>
+        /// Waits for elements colelction to not be empty
+        /// </summary>
+        /// <param name="elements"></param>
+        /// <returns>bool</returns>
+        public static Func<IWebDriver, bool> ElementsNotEmpty(ReadOnlyCollection<IWebElement> elements)
+        {
+            bool condition(IWebDriver driver)
+            {
+                return elements.Count > 0;
+            }
+
+            return condition;
+        }
+
+        
 
         /// <summary>
         /// Waits for JS to be loaded

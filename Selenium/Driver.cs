@@ -35,7 +35,7 @@ namespace Selenium
             _DriverListener.ExceptionThrown += Exception_Thrown;
 
             //set wait
-            Wait = new Wait(_DriverListener, SeleniumConfig.WaitTime);//todo uncomment out
+            Wait = new Wait(_DriverListener, SeleniumConfig.WaitTime);
         }
 
         /// <summary>
