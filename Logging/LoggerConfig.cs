@@ -5,14 +5,13 @@ namespace Logging
 {
     public static class LoggerConfig
     {
-        public static string ParentDirectory { get; set; }
+        public static string ParentDirectory = Path.GetFullPath(@"../../../../");
 
         public static void SetConfig(JToken options)
         {
-            ParentDirectory = options.Value<string>("ParentDirectory");
-            if (ParentDirectory == null)
+            if (options.Value<string>("ParentDirectory") != null)
             {
-                ParentDirectory = Path.GetFullPath(@"../../../../");
+                ParentDirectory = options.Value<string>("ParentDirectory");
             }
 
         }

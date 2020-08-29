@@ -5,7 +5,7 @@ namespace Selenium
 {
     public static class SeleniumConfig
     {
-        public static int WaitTime { get; set; }
+        public static int WaitTime = 15;
 
         public static void SetConfigs(JToken options)
         {

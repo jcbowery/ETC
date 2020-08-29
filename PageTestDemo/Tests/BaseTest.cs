@@ -13,13 +13,7 @@ namespace PageTestDemo.Tests
     {
         public TestContext TestContext { get; set; }
 
-        [ClassInitialize]
-        public static void ClassSetup(TestContext TestContext)
-        {
-            UnityContainerFactory.GetContainer().RegisterType<IAssert, MSTestAssert>();
-            IOCClass.LoadIoC();
-
-        }
+       
 
         [TestInitialize]
         public void StartTest()

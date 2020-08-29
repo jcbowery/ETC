@@ -1,0 +1,24 @@
+Starting timestamp: 8/29/2020 4:21:13 PM
+Test: LoginTest4
+    [STEP]: Navigating to: https://the-internet.herokuapp.com/login
+[INFO]: https://the-internet.herokuapp.com/login Loaded 
+    [STEP]: Looking for Element By.Id: username
+[INFO]: Found Element
+    [STEP]: Sending "" to element
+[INFO]: TEXT SENT
+    [STEP]: Sending "tomsmith" to element
+[INFO]: TEXT SENT
+    [STEP]: Looking for Element By.Id: password
+[INFO]: Found Element
+    [STEP]: Sending "" to element
+[INFO]: TEXT SENT
+    [STEP]: Sending "SuperSecretPassword!" to element
+[INFO]: TEXT SENT
+    [STEP]: Looking for Element By.XPath: //i[@class='fa fa-2x fa-sign-in']
+[INFO]: Found Element
+    [STEP]: Clicking on Element : Login
+[INFO]: Clicked on Element
+    [STEP]: Looking for Element By.Id: flash
+[INFO]: Found Element
+    [STEP]: Looking for Element By.Id: flash
+[INFO]: Found Element
