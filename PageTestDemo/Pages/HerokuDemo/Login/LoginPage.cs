@@ -8,13 +8,13 @@ namespace PageTestDemo.Pages.HerokuDemo.Login
 
         public SecureAreaPage ClickLoginButton()
         {
-            LoginButton.Click();
+            LoginButton.Click(); 
             return new SecureAreaPage();
         }
 
         public LoginPage EnterPassword(string password)
         {
-            Password.SendKeys(password);
+            Password.SendKeys(password); 
             return this;
         }
 
